@@ -26,16 +26,12 @@ class Heap:
 
 def get_input_adjacency_matrix(file_path):
     with open(file_path, 'r') as f:
-        # Number of vertices
         n = int(f.readline().strip())
-        
-        # Initialize n×n matrix with infinities, and 0 on the diagonal
         matrix = [[float('inf')] * n for _ in range(n)]
         for u in range(n):
             matrix[u][u] = 0.0
-        
-        # Read edges
         for line in f:
+            print(line)
             parts = line.strip().split()
             if len(parts) != 3:
                 continue  # skip empty or malformed lines
